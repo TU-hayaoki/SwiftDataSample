@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BloodType: String, Codable {
+enum BloodType: String, Codable, CaseIterable {
     case a = "A型"
     case b = "B型"
     case ab = "AB型"

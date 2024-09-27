@@ -10,22 +10,15 @@ import SwiftData
 
 @main
 struct SwiftDataSampleApp: App {
-    
-    let container: ModelContainer
-    
+        
     init() {
-        do{
-            let schema = Schema([SwiftDataSampleModel.self])
-            container = try ModelContainer(for: schema)
-        } catch {
-            fatalError("Failed to create ModelContainer: \(error)")
-        }
+        print("Initializing SwiftDataSampleApp...")
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SwiftDataSampleView()
         }
-        .modelContainer(container)
+        .modelContainer(SwiftDataManager.sharedModelContainer)
     }
 }
